@@ -1,21 +1,7 @@
-import scala.io.Source
+val str: String = "hello"
 
-def widthOfLength(s: String) = s.length.toString.length
+//val map = str.groupBy(identity).view.mapValues(_.size).toMap
 
-if (args.length > 0) {
-  val lines = Source.fromFile(args(0)).getLines().toList
+var counts: Map[Char, Int] = Map.empty[Char, Int]
 
-  val longestLine = lines.reduceLeft(
-    (a, b) => if (a.length > b.length) a else b
-  )
-
-  val maxWidth = widthOfLength(longestLine)
-
-  for (line <- lines) {
-    val numSpaces = maxWidth - widthOfLength(line)
-    val padding = " " * numSpaces
-    println(padding + line.length + " | " + line)
-  }
-}
-else
-  Console.err.println("Please enter filename")
+println(counts)
