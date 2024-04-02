@@ -1,3 +1,3 @@
 # Scala land
 
-Scala language features tried 
+Scala language features explored 
