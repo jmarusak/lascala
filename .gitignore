@@ -1,8 +1,12 @@
+data
 target/
 .history
 .cache
 .lib/
 .bsp/
+.vscode
+.metals/
+.bloop/
 
 *.class
 *.log
