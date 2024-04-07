@@ -35,6 +35,3 @@ object RetCalc {
     if (params.netIncome > params.currentExpenses) loop(0) else Int.MaxValue
   }
 }
-
-object RetCalcApp extends App {
-}
