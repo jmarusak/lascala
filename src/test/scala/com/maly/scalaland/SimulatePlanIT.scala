@@ -12,10 +12,12 @@ class SimulatePlanIT extends AnyWordSpec with Matchers with TypeCheckedTripleEqu
   "SimulatePlanApp.strMain" should {
     "calculate capital at retirement and at death" in {
       val prompt = "0.04 25 40 3000 2000 10000".split(" ").toArray
-      val (capitalAtRetirement, capitalAfterDeath) = SimulatePlanApp.strMain(prompt)
+      val actual = SimulatePlanApp.strMain(prompt)
 
-      capitalAtRetirement should ===(541267.1990)
-      capitalAfterDeath should ===(309867.5316)
+      val expected = s"""
+        |Capital after 25 years of savings: 541267
+        |Capital aftrt 40 years in retirement: 309868
+        |""".stripMargin
     }
   }
 }

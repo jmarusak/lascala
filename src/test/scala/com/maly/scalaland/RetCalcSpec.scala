@@ -48,7 +48,7 @@ class RetCalcSpec extends AnyWordSpec with Matchers with TypeCheckedTripleEquals
         params)
       
       val expected = 23 * 12 + 1
-      actual should ===(expected)
+      actual should ===(Some(expected))
     }
   }
 }
