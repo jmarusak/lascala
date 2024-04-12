@@ -21,7 +21,7 @@ object SimulatePlanApp extends App {
 
     s"""
       |Capital after $nbOfYearsSaving years of savings: ${capitalAtRetirement.round}
-      |Capital aftrt $nbOfYearsInRetirement years in retirement: ${capitalAfterDeath.round}
+      |Capital after $nbOfYearsInRetirement years in retirement: ${capitalAfterDeath.round}
     """.stripMargin
   }
 }

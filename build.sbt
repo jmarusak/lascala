@@ -7,5 +7,5 @@ libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.18"
 
 Compile / mainClass := Some("com.maly.scalaland.SimulatePlanApp")
 
-//assembly / mainClass := Some("com.maly.scalaland.SimulatePlanApp")
-//assembly / assemblyJarName := Some("retcalc.jar")
+assembly / mainClass := Some("com.maly.scalaland.SimulatePlanApp")
+assembly / assemblyJarName := "retcalc.jar"
