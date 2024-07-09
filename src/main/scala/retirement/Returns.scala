@@ -1,4 +1,4 @@
-package com.maly.scalaland
+package retirement 
 
 case class VariableReturn(
   monthId: String,

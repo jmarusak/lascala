@@ -1,12 +1,12 @@
-package com.maly.scalaland
+package retirement 
 
-case class RetCalcParams(
+case class CalculatorParams(
   nbOfMonthsInRetirement: Int,
   netIncome: Int,
   currentExpenses: Int,
   initialCapital: Double)
 
-object RetCalc {
+object Calculator {
   def futureCapital(returns: Returns, nbOfMonths: Int,
     netIncome: Int, currentExpenses: Int, initialCapital: Double): Double = {
 
@@ -15,7 +15,7 @@ object RetCalc {
       (accumulated, month) => accumulated * (1 + Returns.monthlyRate(returns, month)) + monthlySavings)
   }
 
-  def simulatePlan(returns: Returns, params: RetCalcParams, nbOfMonthsSaving: Int): (Double, Double) = {
+  def simulatePlan(returns: Returns, params: CalculatorParams, nbOfMonthsSaving: Int): (Double, Double) = {
     import params._
     val capitalAtRetirement = futureCapital(returns, nbOfMonthsSaving,
       netIncome, currentExpenses, initialCapital)
@@ -25,7 +25,7 @@ object RetCalc {
     (capitalAtRetirement, capitalAfterDeath)
   }
 
-  def nbOfMonthsSaving(returns: Returns, params: RetCalcParams): Option[Int] = {
+  def nbOfMonthsSaving(returns: Returns, params: CalculatorParams): Option[Int] = {
     def loop(months: Int): Int = {
       val (capitalAtRetirement, capitalAfterDeath) = simulatePlan(returns, params, months) 
 

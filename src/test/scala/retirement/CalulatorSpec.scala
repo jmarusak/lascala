@@ -1,23 +1,23 @@
-package com.maly.scalaland
+package retirement 
 
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalactic.{Equality, TolerantNumerics, TypeCheckedTripleEquals}
 
-class RetCalcSpec extends AnyWordSpec with Matchers with TypeCheckedTripleEquals {
+class CalculatorSpec extends AnyWordSpec with Matchers with TypeCheckedTripleEquals {
 
   implicit val doubleEquality: Equality[Double] =
     TolerantNumerics.tolerantDoubleEquality(0.0001)
   
-  val params = RetCalcParams(
+  val params = CalculatorParams(
     nbOfMonthsInRetirement = 40 * 12,
     netIncome = 3000,
     currentExpenses = 2000,
     initialCapital = 10000)
 
-  "RetCalc.futureCapital" should {
+  "Calculator.futureCapital" should {
     "calculate future value of savings in n-months" in {
-      val actual = RetCalc.futureCapital(
+      val actual = Calculator.futureCapital(
         FixedReturns(0.04),
         nbOfMonths = 25 * 12,
         params.netIncome,
@@ -29,9 +29,9 @@ class RetCalcSpec extends AnyWordSpec with Matchers with TypeCheckedTripleEquals
     }
   }
 
-  "RetCalc.simulatePlan" should {
+  "Calculator.simulatePlan" should {
     "calculate capital at retirement and at death" in {
-      val (capitalAtRetirement, capitalAfterDeath) = RetCalc.simulatePlan(
+      val (capitalAtRetirement, capitalAfterDeath) = Calculator.simulatePlan(
         FixedReturns(0.04),
         params,
         nbOfMonthsSaving = 25 * 12)
@@ -41,9 +41,9 @@ class RetCalcSpec extends AnyWordSpec with Matchers with TypeCheckedTripleEquals
     }
   }
 
-  "RetCalc.nbOfMonthsSaving" should {
+  "Calculator.nbOfMonthsSaving" should {
     "calculate how long I need to save before retiring" in {
-      val actual = RetCalc.nbOfMonthsSaving(
+      val actual = Calculator.nbOfMonthsSaving(
         FixedReturns(0.04),
         params)
       

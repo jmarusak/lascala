@@ -1,4 +1,4 @@
-package com.maly.rational
+package rational
 
 class Rational(n: Int, d: Int) {
   require(d != 0, "rational numbers may not have a zero in the denominator")

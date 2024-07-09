@@ -1,4 +1,4 @@
-package com.maly.scalaland
+package retirement 
 
 object SimulatePlanApp extends App {
   println(strMain(args))
@@ -8,13 +8,13 @@ object SimulatePlanApp extends App {
     val nbOfYearsSaving = args(1).toInt
     val nbOfYearsInRetirement = args(2).toInt
   
-    val params = RetCalcParams(
+    val params = CalculatorParams(
       nbOfMonthsInRetirement = nbOfYearsInRetirement * 12,
       netIncome = args(3).toInt,
       currentExpenses = args(4).toInt,
       initialCapital = args(5).toDouble)
 
-    val (capitalAtRetirement, capitalAfterDeath) = RetCalc.simulatePlan(
+    val (capitalAtRetirement, capitalAfterDeath) = Calculator.simulatePlan(
       FixedReturns(annualInterestRate),
       params,
       nbOfYearsSaving * 12)

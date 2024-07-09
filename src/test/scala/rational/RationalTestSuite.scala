@@ -1,5 +1,6 @@
 import org.scalatest.funsuite.AnyFunSuite
-import com.maly.rational.Rational
+
+import rational.Rational
 
 class RationalTestSuite extends AnyFunSuite {
   test("constructor should setup member field 'numerator'") {

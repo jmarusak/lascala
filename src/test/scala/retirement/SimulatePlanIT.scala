@@ -1,4 +1,4 @@
-package com.maly.scalaland
+package retirement 
 
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
